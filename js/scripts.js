@@ -32,3 +32,54 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+window.addEventListener("load", function() {
+    const form = document.getElementById('provider-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        alert("Success!");
+      })
+    });
+  });
+  
+  window.addEventListener("load", function() {
+    const form = document.getElementById('patient-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        alert("Success!");
+      })
+    });
+  });
+  
+  window.addEventListener("load", function() {
+    const form = document.getElementById('contact-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      const data = new FormData(form);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        const closeButton = document.body.querySelector('.btn-close');
+        closeButton.click();
+        alert("Success!");
+      })
+    });
+  });
