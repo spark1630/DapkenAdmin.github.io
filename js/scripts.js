@@ -45,6 +45,7 @@ window.addEventListener("load", function() {
         body: data,
       })
       .then(() => {
+        document. getElementById("provider-form"). reset();
         alert("Success!");
       })
     });
@@ -61,6 +62,7 @@ window.addEventListener("load", function() {
         body: data,
       })
       .then(() => {
+        document. getElementById("patient-form"). reset();
         alert("Success!");
       })
     });
