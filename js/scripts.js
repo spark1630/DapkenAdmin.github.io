@@ -46,27 +46,27 @@ window.addEventListener("load", function() {
       })
       .then(() => {
         document. getElementById("provider-form"). reset();
-        alert("Success!");
+        alert("Thanks!");
       })
     });
   });
   
-  window.addEventListener("load", function() {
-    const form = document.getElementById('patient-form');
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-      const data = new FormData(form);
-      const action = e.target.action;
-      fetch(action, {
-        method: 'POST',
-        body: data,
-      })
-      .then(() => {
-        document. getElementById("patient-form"). reset();
-        alert("Success!");
-      })
-    });
-  });
+  // window.addEventListener("load", function() {
+  //   const form = document.getElementById('patient-form');
+  //   form.addEventListener("submit", function(e) {
+  //     e.preventDefault();
+  //     const data = new FormData(form);
+  //     const action = e.target.action;
+  //     fetch(action, {
+  //       method: 'POST',
+  //       body: data,
+  //     })
+  //     .then(() => {
+  //       document. getElementById("patient-form"). reset();
+  //       alert("Success!");
+  //     })
+  //   });
+  // });
   
   window.addEventListener("load", function() {
     const form = document.getElementById('contact-form');
@@ -81,7 +81,27 @@ window.addEventListener("load", function() {
       .then(() => {
         const closeButton = document.body.querySelector('.btn-close');
         closeButton.click();
-        alert("Success!");
+        alert("Thanks!");
+      })
+    });
+  });
+
+  window.addEventListener("load", function() {
+    const form = document.getElementById('patient-contact-form');
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      var data = new FormData(form);
+      const allDiseases = data.getAll('Message');
+      data.set('Message', allDiseases);
+      const action = e.target.action;
+      fetch(action, {
+        method: 'POST',
+        body: data,
+      })
+      .then(() => {
+        const closeButton = document.body.querySelector('.btn-close');
+        closeButton.click();
+        alert("Thanks!");
       })
     });
   });
